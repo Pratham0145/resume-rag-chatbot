@@ -9,11 +9,7 @@ on:
 
 jobs:
 
-<<<<<<< HEAD
-  build-and-test:
-=======
   build-and-push:
->>>>>>> b7682d2 (Added Docker Hub CI/CD pipeline)
 
     runs-on: ubuntu-latest
 
@@ -21,11 +17,7 @@ jobs:
     steps:
 
       # ==============================
-<<<<<<< HEAD
-      # Checkout Repo
-=======
       # Checkout Repository
->>>>>>> b7682d2 (Added Docker Hub CI/CD pipeline)
       # ==============================
 
       - name: Checkout Repository
@@ -33,55 +25,7 @@ jobs:
 
 
       # ==============================
-<<<<<<< HEAD
-      # Python Setup
-      # ==============================
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-
-      # ==============================
-      # Install Backend Dependencies
-      # ==============================
-
-      - name: Install Backend Dependencies
-        run: |
-          cd backend
-          pip install -r requirements.txt
-
-
-      # ==============================
-      # Node Setup
-      # ==============================
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-
-      # ==============================
-      # Install Frontend Dependencies
-      # ==============================
-
-      - name: Install Frontend Dependencies
-        run: |
-          cd frontend
-          npm install
-
-
-      # ==============================
-      # Docker Build Test
-      # ==============================
-
-      - name: Build Docker Containers
-        run: |
-          docker compose build
-=======
-      # Docker Login
+      # Login to Docker Hub
       # ==============================
 
       - name: Login to Docker Hub
@@ -93,7 +37,7 @@ jobs:
 
 
       # ==============================
-      # Build Backend Image
+      # Build Backend Docker Image
       # ==============================
 
       - name: Build Backend Docker Image
@@ -102,7 +46,7 @@ jobs:
 
 
       # ==============================
-      # Push Backend Image
+      # Push Backend Docker Image
       # ==============================
 
       - name: Push Backend Docker Image
@@ -111,7 +55,7 @@ jobs:
 
 
       # ==============================
-      # Build Frontend Image
+      # Build Frontend Docker Image
       # ==============================
 
       - name: Build Frontend Docker Image
@@ -120,10 +64,9 @@ jobs:
 
 
       # ==============================
-      # Push Frontend Image
+      # Push Frontend Docker Image
       # ==============================
 
       - name: Push Frontend Docker Image
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/rag-frontend
->>>>>>> b7682d2 (Added Docker Hub CI/CD pipeline)
