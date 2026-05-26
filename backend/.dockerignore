@@ -1,0 +1,10 @@
+__pycache__
+cache
+cachehuggingface
+cachepip
+cachepycache
+chroma_db
+cachetemp
+uploads
+.env
+venv

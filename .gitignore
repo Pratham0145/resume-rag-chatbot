@@ -1,0 +1,23 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Env
+.env
+
+# Node
+node_modules/
+.next/
+
+# Uploads
+uploads/
+
+# Cache
+cache/
+cachetemp/
+cachehuggingface/
+
+# OS
+.DS_Store
+Thumbs.db
